@@ -28,22 +28,22 @@ class Splashpage extends StatelessWidget {
           SizedBox(
               width: double.infinity,
               height: double.infinity,
-              child: Image.asset(
-                "image/SplashpageBG-01.png",
+              child: Image.asset( 
+                "image/SplashpageBG-01-01.png",
                 fit: BoxFit.cover,
               )),
           Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: 85,
+                height: mediaqurey.height*.30,
                 width: double.infinity,
-                color: Colors.amberAccent,
+                // color: Colors.amberAccent,
                 child: const Center(
-                    child: Text(
-                  "EZKAR\nEL-AMEDI",
-                  style: TextStyle(fontSize: 70, fontWeight: FontWeight.w500),
-                  textAlign: TextAlign.center,
-                )),
+                    child: Column(
+                      children: [
+                //    
+                      ],
+                    )),
               )),
         ],
       ),
