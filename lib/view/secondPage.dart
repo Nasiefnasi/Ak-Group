@@ -17,10 +17,12 @@ class SecondPage extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(8)),
                 border: Border.all(width: 3, color: ligGreen)),
-            child: Align(alignment: Alignment.centerLeft, child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-              child: Text("ARAMAK",style: TextStyle(fontSize: 15)),
-            )),
+            child: const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: Text("ARAMAK", style: TextStyle(fontSize: 15)),
+                )),
           ),
           backgroundColor: const Color.fromARGB(255, 2, 113, 96),
           leading: const Icon(

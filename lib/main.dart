@@ -1,4 +1,5 @@
 import 'package:ak/core.dart';
+import 'package:ak/view/bottemNavBar.dart';
 import 'package:ak/view/secondPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SecondPage( ),
+      home: BottomBar(),
     );
   }
 }
