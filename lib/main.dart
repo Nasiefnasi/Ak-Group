@@ -1,3 +1,4 @@
+import 'package:ak/core.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,7 +38,7 @@ class Splashpage extends StatelessWidget {
               child: Container(
                 height: mediaqurey.height * .17,
                 width: double.infinity,
-                color: Colors.amberAccent,
+                // color: Colors.amberAccent,
                 child: Center(
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -46,20 +47,57 @@ class Splashpage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                            height: 30,
+                            height: 35,
                             width: 120,
                             child: ElevatedButton(
-                                onPressed: () {}, child: const Text("qwe"))),
-                        SizedBox(
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Color.fromARGB(216, 9, 207, 134)),
+                                    shape: MaterialStateProperty.all(
+                                        const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.zero)))),
+                                onPressed: () {},
+                                child: const Text(
+                                  "اللغة التركية",
+                                  style: TextStyle(
+                                    color: darkGreen,
+                                    fontSize: 20,
+                                  ),
+                                ))),
+                        const SizedBox(
                           width: 20,
                         ),
                         SizedBox(
                             width: 120,
-                            height: 30,
+                            height: 35,
                             child: ElevatedButton(
-                                onPressed: () {}, child: const Text("qwe")))
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Colors.white),
+                                    shape: MaterialStateProperty.all(
+                                        const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.zero)))),
+                                onPressed: () {},
+                                child: const Text(
+                                  "Türkçe",
+                                  style: TextStyle(
+                                      color: darkGreen,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w800),
+                                )))
                       ],
                     ),
+                    const Spacer(),
+                    const Text(
+                      "www.katrefm.com",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color:ligGreen ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    )
                   ],
                 )),
               )),
