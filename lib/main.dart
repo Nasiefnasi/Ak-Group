@@ -1,7 +1,10 @@
 import 'package:ak/core.dart';
+import 'package:ak/view/secondPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashpage(),
+      home: SecondPage( ),
     );
   }
 }
@@ -35,7 +38,7 @@ class Splashpage extends StatelessWidget {
               )),
           Align(
               alignment: Alignment.bottomCenter,
-              child: Container(
+              child: SizedBox(
                 height: mediaqurey.height * .17,
                 width: double.infinity,
                 // color: Colors.amberAccent,
@@ -56,12 +59,13 @@ class Splashpage extends StatelessWidget {
                                     shape: MaterialStateProperty.all(
                                         const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.all(
-                                                Radius.zero)))),
+                                                Radius.circular(5))))),
                                 onPressed: () {},
                                 child: const Text(
-                                  "اللغة التركية",
+                                  "العربية",
                                   style: TextStyle(
                                     color: darkGreen,
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
                                 ))),
@@ -78,22 +82,22 @@ class Splashpage extends StatelessWidget {
                                     shape: MaterialStateProperty.all(
                                         const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.all(
-                                                Radius.zero)))),
+                                                Radius.circular(5))))),
                                 onPressed: () {},
-                                child: const Text(
-                                  "Türkçe",
-                                  style: TextStyle(
-                                      color: darkGreen,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w800),
-                                )))
+                                child: const Text("Türkçe",
+                                    style: TextStyle(
+                                        color: darkGreen,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800))))
                       ],
                     ),
                     const Spacer(),
                     const Text(
                       "www.katrefm.com",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color:ligGreen ),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: ligGreen),
                     ),
                     const SizedBox(
                       height: 20,
