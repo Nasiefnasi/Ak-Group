@@ -1,11 +1,10 @@
 import 'package:ak/core.dart';
 import 'package:ak/view/bottemNavBar.dart';
-import 'package:ak/view/secondPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 

@@ -60,7 +60,7 @@ class SecondPage extends StatelessWidget {
             SecondGridviewpage(
                 Texts: "DUALAR", imag: "image/DUALAR VE ZIR-01.png"),
             SecondGridviewpage(
-                Texts: "KATRE FM", imag: "image/KATRE FM-01.png"),
+                Texts: "KATRE FM", imag: "image/KATRE-01-01.png"),
           ],
         ),
       )),
