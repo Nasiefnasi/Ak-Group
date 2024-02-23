@@ -1,5 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:ak/core.dart';
+import 'package:ak/main.dart';
 import 'package:ak/view/listofdatasthiredpage.dart';
+import 'package:ak/view/readingpageLast.dart';
 import 'package:ak/view/secondPage.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +17,10 @@ class BottomBar extends StatefulWidget {
 int _currentIndex = 0;
 
 class _BottomBarState extends State<BottomBar> {
- final List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
+    const ReadPageLast(),
     const DataListpage(),
-    const SecondPage(),
-    const SecondPage(),
+    Splashpage(),
     const SecondPage(),
     const SecondPage(),
   ];
