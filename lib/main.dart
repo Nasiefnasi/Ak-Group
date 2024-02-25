@@ -1,6 +1,7 @@
 import 'package:ak/core.dart';
 import 'package:ak/view/bottemNavBar.dart';
 import 'package:ak/view/imageandicons.dart';
+import 'package:ak/view/splashpage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BottomBar(),
+        home: Splash(),
       ),
     );
   }
@@ -31,7 +32,6 @@ class Splashpage extends StatelessWidget {
   const Splashpage({super.key});
 
   @override
- 
   @override
   Widget build(BuildContext context) {
     var mediaqurey = MediaQuery.of(context).size;
@@ -42,13 +42,12 @@ class Splashpage extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child: 
-                // value.image
-                Image.asset(
+                child:
+                    // value.image
+                    Image.asset(
                   "image/SplashpageBG-01.png",
                   fit: BoxFit.cover,
-                )
-                ),
+                )),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(

@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:ak/core.dart';
-import 'package:ak/main.dart';
 import 'package:ak/view/listofdatasthiredpage.dart';
 import 'package:ak/view/readingpageLast.dart';
 import 'package:ak/view/secondPage.dart';
@@ -20,7 +19,7 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> _widgetOptions = <Widget>[
     const ReadPageLast(),
     const DataListpage(),
-    Splashpage(),
+    const SecondPage(),
     const SecondPage(),
     const SecondPage(),
   ];
@@ -35,7 +34,12 @@ class _BottomBarState extends State<BottomBar> {
             image:
                 DecorationImage(image: AssetImage("image/bottomnavbg-01.png"))),
         child: BottomNavigationBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: const Color.fromARGB(
+            255,
+            0,
+            76,
+            65,
+          ),
           onTap: (value) {
             setState(() {
               _currentIndex = value;
@@ -43,7 +47,7 @@ class _BottomBarState extends State<BottomBar> {
           },
           currentIndex: _currentIndex,
           selectedItemColor: ligGreen.withOpacity(1.0),
-          unselectedItemColor: Colors.white.withOpacity(0.7),
+          // unselectedItemColor: Colors.white.withOpacity(0.7),
           items: <BottomNavigationBarItem>[
             const BottomNavigationBarItem(
               backgroundColor: darkGreen,
@@ -51,12 +55,12 @@ class _BottomBarState extends State<BottomBar> {
               label: '',
             ),
             const BottomNavigationBarItem(
-              // backgroundColor: darkGreen,
+              backgroundColor: darkGreen,
               icon: Icon(Icons.bookmark_border_rounded),
               label: '',
             ),
             BottomNavigationBarItem(
-              // backgroundColor: darkGreen,
+              backgroundColor: darkGreen,
               icon: _currentIndex == 2
                   ? Image.asset(
                       'image/KATRE FM-liggreen-01.png', // Replace this with your image path
@@ -69,7 +73,7 @@ class _BottomBarState extends State<BottomBar> {
               label: '',
             ),
             BottomNavigationBarItem(
-              // backgroundColor: darkGreen,
+              backgroundColor: darkGreen,
               icon: _currentIndex == 3
                   ? Image.asset(
                       'image/bar conuter-01.png', // Replace this with your image path
@@ -82,7 +86,7 @@ class _BottomBarState extends State<BottomBar> {
               label: '',
             ),
             const BottomNavigationBarItem(
-              // backgroundColor: darkGreen,
+              backgroundColor: darkGreen,
               icon: Icon(Icons.table_rows_rounded),
               label: '',
             ),
