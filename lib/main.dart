@@ -2,7 +2,9 @@
 
 import 'dart:async';
 
+import 'package:ak/controler/counterpage.dart';
 import 'package:ak/core.dart';
+import 'package:ak/view/bottemNavBar.dart';
 import 'package:ak/view/counterpage.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/secondPage.dart';
@@ -19,14 +21,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
+      providers: [ChangeNotifierProvider(create: (context) => Conutpage(),),
         ChangeNotifierProvider(
           create: (context) => Imageicons(),
         )
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CounterPage(),
+        home: BottomBar(),
       ),
     );
   }
