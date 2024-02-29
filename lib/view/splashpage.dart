@@ -1,9 +1,11 @@
-// ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: sized_box_for_whitespace, await_only_futures
 
 import 'dart:async';
 
 import 'package:ak/view/bottemNavBar.dart';
+import 'package:ak/view/imageandicons.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -13,27 +15,38 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  
   @override
-  void initState() {
+  void initState()  {
     // TODO: implement initState
+     Provider.of<Imageicons>(context,listen: false).imagess;
     Timer(
-        const Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const BottomBar())));
+        const Duration(seconds: 2),
+        () => Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) {
+                return BottomBar();
+              },
+            )));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Image.asset(
-          "image/Splash-01.png",
-          fit: BoxFit.cover,
+   
+    return Consumer<Imageicons>(builder: (context, value, child) {
+      return Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Provider.of<Imageicons>(context,listen: false).imagess,
+          // Image.asset(
+          //   "image/Splash-01.png",
+          //   fit: BoxFit.cover,
+          // ),
         ),
-      ),
+      );
+    },
+     
     );
   }
 }

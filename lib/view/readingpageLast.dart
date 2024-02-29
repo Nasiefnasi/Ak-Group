@@ -50,8 +50,39 @@ class ReadPageLast extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(child: Container(color: Colors.amber,)),
-          Expanded (child: Container(color: Colors.black,))
+          Expanded(
+              child: Container(
+            color: const Color.fromARGB(96, 192, 236, 225),
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  " الرَّحيمِسمِ اللَّهِ الرَّحمٰنِ الرَّحيمِسمِ اللَّهِ الرَّحمٰنِ الرَّحيمِ",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 35,
+                    color: darkGreen,
+                    fontFamily: "arabicf",
+                  ),
+                ),
+              ),
+            ),
+          )),
+          Expanded(
+              child: Container(
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "In the Name of Allah, the All-beneficent, the All- merciful",
+                style: TextStyle(
+                  fontSize: 33,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "arabicf",
+                ),
+              ),
+            ),
+            // color: Colors.black,
+          ))
         ],
       )),
     );

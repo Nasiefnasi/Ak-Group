@@ -1,7 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'dart:async';
+
 import 'package:ak/core.dart';
-import 'package:ak/view/bottemNavBar.dart';
+import 'package:ak/view/counterpage.dart';
 import 'package:ak/view/imageandicons.dart';
-import 'package:ak/view/splashpage.dart';
+import 'package:ak/view/secondPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,18 +26,18 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        home: CounterPage(),
       ),
     );
   }
 }
 
-class Splashpage extends StatelessWidget {
-  const Splashpage({super.key});
+class LanguagePick extends StatelessWidget {
+  const LanguagePick({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
+    Provider.of<Imageicons>(context, listen: true);
     var mediaqurey = MediaQuery.of(context).size;
     return Consumer<Imageicons>(builder: (context, value, child) {
       return Scaffold(
@@ -42,12 +46,13 @@ class Splashpage extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child:
-                    // value.image
-                    Image.asset(
-                  "image/SplashpageBG-01.png",
-                  fit: BoxFit.cover,
-                )),
+                child: value.splashimage
+                // value.image
+                //     Image.asset(
+                //   "image/SplashpageBG-01.png",
+                //   fit: BoxFit.cover,
+                // ),
+                ),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
@@ -68,12 +73,50 @@ class Splashpage extends StatelessWidget {
                                   style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
-                                              Color.fromARGB(216, 9, 207, 134)),
+                                              const Color.fromARGB(
+                                                  216, 9, 207, 134)),
                                       shape: MaterialStateProperty.all(
                                           const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(5))))),
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .Dualar;
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .Esmaullah;
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .Kasideler;
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .Mubarek;
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .Muhtelif;
+
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .farz;
+                                    Provider.of<Imageicons>(context,
+                                            listen: false)
+                                        .katre;
+
+                                    Timer(Duration(seconds: 2), () {
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                        builder: (context) => DuaPage(),
+                                      ));
+                                    });
+
+                                    // Navigator.push(context, MaterialPageRoute(
+                                    //   builder: (context) {
+                                    //     return const DuaPage();
+                                    //   },
+                                    // )
+                                    // );
+                                  },
                                   child: const Text(
                                     "العربية",
                                     style: TextStyle(
@@ -97,7 +140,13 @@ class Splashpage extends StatelessWidget {
                                           const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(5))))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return const DuaPage();
+                                      },
+                                    ));
+                                  },
                                   child: const Text("Türkçe",
                                       style: TextStyle(
                                           color: darkGreen,

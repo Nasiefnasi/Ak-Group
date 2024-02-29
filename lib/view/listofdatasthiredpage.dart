@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable, duplicate_ignore, avoid_unnecessary_containers
 
 import 'package:ak/core.dart';
+import 'package:ak/view/readingpageLast.dart';
 import 'package:flutter/material.dart';
 
 class DataListpage extends StatelessWidget {
@@ -81,7 +82,11 @@ class DataListpage extends StatelessWidget {
                       child: ListView.builder(
                         itemCount: nameofdata.length,
                         itemBuilder: (context, index) {
-                          return ListofNames(txst: nameofdata[index]);
+                          return InkWell( onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                          return  const  ReadPageLast();
+                            },));
+                          },  child: ListofNames(txst: nameofdata[index]));
                         },
                       ),
                     ),
