@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Imageicons extends ChangeNotifier {
   final splashimage = Image.asset(
-    "image/Splash-01.png",
+    "image/SplashpageBG-01.png",
     fit: BoxFit.cover,
   );
   dynamic imagess = Image.asset(

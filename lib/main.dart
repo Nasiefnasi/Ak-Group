@@ -8,6 +8,7 @@ import 'package:ak/view/bottemNavBar.dart';
 import 'package:ak/view/counterpage.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/secondPage.dart';
+import 'package:ak/view/splashpage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,10 +29,10 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BottomBar(),
+        home: Splash(),
       ),
     );
-  }
+  } 
 }
 
 class LanguagePick extends StatelessWidget {

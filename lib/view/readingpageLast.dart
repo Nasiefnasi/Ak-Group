@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, avoid_unnecessary_containers
 
 import 'package:ak/core.dart';
 import 'package:flutter/material.dart';
@@ -57,10 +57,10 @@ class ReadPageLast extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  " الرَّحيمِسمِ اللَّهِ الرَّحمٰنِ الرَّحيمِسمِ اللَّهِ الرَّحمٰنِ الرَّحيمِ",
+                  "صَلٰوةُ اللّٰهْ سَلٰامُ اللّٰهْ حَبِيبِ كِبْرِيَاسِينَەبِزِی\n بَخْشَ ايْلَيَە اَللّٰهْ مُحَمَّدْ مُصْطَفٰی سِينَەصَلٰوةُ اللّٰهْ سَلٰامُ اللّٰهْ اُولَا خَيْرُ الْوَرَاسِينَەصَلٰوةُ اللّٰهْ سَلٰامُ اللّٰهْ اٰنِڭْ نُورِ دِيدَارِينَەبِزِی بَخْشَ ايْلَيَە مَوْلٰی حَبِيبِڭْ چَارِ يَارِينَەی بَخْشَ ايْلَيَە اَللّٰهْ عَلِيُّ الْمُرْتَضَاسِينَەةُ اللّٰهْ سَلٰامُ اللّٰهْ اٰنِڭْ اَوْلَادُ اٰلِينَە",
                   textAlign: TextAlign.right,
                   style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 30,
                     color: darkGreen,
                     fontFamily: "arabicf",
                   ),

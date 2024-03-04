@@ -21,7 +21,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
      Provider.of<Imageicons>(context,listen: false).imagess;
     Timer(
-        const Duration(seconds: 2),
+        const Duration(seconds: 4),
         () => Navigator.pushReplacement(context, MaterialPageRoute(
               builder: (context) {
                 return BottomBar();

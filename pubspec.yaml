@@ -81,7 +81,7 @@ flutter:
   fonts:
     - family: arabicf
       fonts:
-        - asset: fonts\MUHAMMADI QURANIC FONT.ttf
+        - asset: fonts\Scheherazade-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
           style: italic
     - family: Jersey
