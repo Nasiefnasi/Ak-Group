@@ -24,7 +24,6 @@ class _BottomBarState extends State<BottomBar> {
     const DataListpage(),
     const CounterPage(),
     const DuaPage()
-    
   ];
 
   @override
