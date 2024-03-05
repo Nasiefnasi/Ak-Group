@@ -49,7 +49,6 @@ class _BottomBarState extends State<BottomBar> {
           },
           currentIndex: _currentIndex,
           selectedItemColor: ligGreen.withOpacity(1.0),
-          // unselectedItemColor: Colors.white.withOpacity(0.7),
           items: <BottomNavigationBarItem>[
             const BottomNavigationBarItem(
               backgroundColor: darkGreen,
@@ -65,11 +64,11 @@ class _BottomBarState extends State<BottomBar> {
               backgroundColor: darkGreen,
               icon: _currentIndex == 2
                   ? Image.asset(
-                      'image/KATRE FM-liggreen-01.png', // Replace this with your image path
+                      'image/KATRE FM-liggreen-01.png',
                       width: 40,
                     )
                   : Image.asset(
-                      'image/KATRE FM-white-01.png', // Replace this with your image path
+                      'image/KATRE FM-white-01.png',
                       width: 40,
                     ),
               label: '',
@@ -78,11 +77,11 @@ class _BottomBarState extends State<BottomBar> {
               backgroundColor: darkGreen,
               icon: _currentIndex == 3
                   ? Image.asset(
-                      'image/bar conuter-01.png', // Replace this with your image path
+                      'image/bar conuter-01.png',
                       width: 30,
                     )
                   : Image.asset(
-                      'image/bar conuter white-01.png', // Replace this with your image path
+                      'image/bar conuter white-01.png',
                       width: 25,
                     ),
               label: '',

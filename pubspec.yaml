@@ -87,6 +87,9 @@ flutter:
     - family: Jersey
       fonts:
         - asset: fonts\JerseyM54-aLX9.ttf
+    - family: digitalfont
+      fonts:
+        - asset: fonts\digital-7.ttf    
         # - asset: fonts/TrajanPro_Bold.ttf
           # weight: 700
   #
