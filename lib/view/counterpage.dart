@@ -54,7 +54,7 @@ class CounterPage extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    color: Colors.amber,
+                    // color: Colors.amber,
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -88,7 +88,7 @@ class CounterPage extends StatelessWidget {
                                         height: 30,
                                         child: const Image(
                                             image: AssetImage(
-                                                "image/counder-01.png")))),
+                                                "image/counder-icon-01.png")))),
                                 const CircleAvatar(
                                     radius: 22,
                                     backgroundColor: ligGreen,
@@ -129,10 +129,11 @@ class CounterPage extends StatelessWidget {
                                         color: ligGreen,
                                         borderRadius:
                                             BorderRadius.circular(15)),
-                                    child: const Center(
+                                    child: Center(
                                         child: Text(
-                                      "000001",
-                                      style: TextStyle(
+                                      "${count.data}",
+                                      textAlign: TextAlign.left,
+                                      style: const TextStyle(
                                           letterSpacing: 6.0,
                                           fontSize: 65,
                                           fontWeight: FontWeight.w500,
@@ -143,17 +144,56 @@ class CounterPage extends StatelessWidget {
                                   Container(
                                     height: mediqurey.height * .12,
                                     // color: Colors.black,
-                                    width: mediqurey.width*.8,
-                                    child: const Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    width: mediqurey.width * .8,
+                                    child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         CircleAvatar(
+                                          backgroundColor: ligGreen,
+                                          child: Icon(
+                                            Icons.replay,
+                                            size: 60,
+                                            color: darkGreen,
+                                          ),
                                           radius: 39,
                                         ),
                                         CircleAvatar(
+                                          backgroundColor: ligGreen,
+                                          child: Icon(Icons.autorenew_rounded,
+                                              size: 60, color: darkGreen),
                                           radius: 39,
                                         )
                                       ],
                                     ),
+                                  ),
+                                  Center(
+                                    child: InkWell(
+                                      onTap: () {
+                                        count.addvalues();
+                                      },
+                                      child: Container(
+                                        width: mediqurey.width * .4,
+                                        height: mediqurey.height * .2,
+                                        decoration: BoxDecoration(
+                                            color: ligGreen,
+                                            borderRadius:
+                                                BorderRadius.circular(100)),
+                                      ),
+                                    ),
+                                  ),
+                                  // Expanded(
+                                  //     child: Container(
+                                  //   width: 150, height: 150,
+                                  //   child: CircleAvatar(),
+                                  //   // color: Colors.brown,ch
+                                  //   decoration: BoxDecoration(
+                                  //     borderRadius: BorderRadius.circular(100),
+                                  //     color: Colors.brown,
+                                  //   ),
+                                  // )),
+                                  const SizedBox(
+                                    height: 20,
                                   )
                                 ],
                               ),
