@@ -43,7 +43,7 @@ class CounterPage extends StatelessWidget {
               ]),
           body: InkWell(
             onTap: () {
-              count.addvalues();
+              // count.addvalues();
             },
             child: Stack(
               children: [
@@ -145,24 +145,60 @@ class CounterPage extends StatelessWidget {
                                     height: mediqurey.height * .12,
                                     // color: Colors.black,
                                     width: mediqurey.width * .8,
-                                    child: const Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
-                                        CircleAvatar(
-                                          backgroundColor: ligGreen,
-                                          child: Icon(
-                                            Icons.replay,
-                                            size: 60,
-                                            color: darkGreen,
+                                        GestureDetector(onTap: () {count.lessvalues();
+                                          
+                                        },
+                                          child: CircleAvatar(
+                                            backgroundColor: ligGreen,
+                                            child: Icon(
+                                              Icons.replay,
+                                              size: 60,
+                                              color: darkGreen,
+                                            ),
+                                            radius: 39,
                                           ),
-                                          radius: 39,
                                         ),
-                                        CircleAvatar(
-                                          backgroundColor: ligGreen,
-                                          child: Icon(Icons.autorenew_rounded,
-                                              size: 60, color: darkGreen),
-                                          radius: 39,
+                                        InkWell(
+                                          onTap: () {
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                return AlertDialog(
+                                                  title: Text("Success"),
+                                                  titleTextStyle: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
+                                                      fontSize: 20),
+                                                  actionsOverflowButtonSpacing:
+                                                      20,
+                                                  actions: [
+                                                    
+                                                    ElevatedButton(
+                                                        onPressed: () {},
+                                                        child: Text("Back")),
+                                                    ElevatedButton(
+                                                        onPressed: () {},
+                                                        child: Text("Next")),
+                                                  ],
+                                                  content: Text(
+                                                      "Saved successfully"),
+                                                );
+                                              },
+                                            );
+
+                                            // count.clearvalues();
+                                          },
+                                          child: CircleAvatar(
+                                            backgroundColor: ligGreen,
+                                            child: Icon(Icons.autorenew_rounded,
+                                                size: 60, color: darkGreen),
+                                            radius: 39,
+                                          ),
                                         )
                                       ],
                                     ),
