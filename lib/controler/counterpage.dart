@@ -13,9 +13,10 @@ class Conutpage extends ChangeNotifier {
     notifyListeners();
   }
 
-  clearvalues() {
+  clearvalues(BuildContext context) {
     data = 0;
     notifyListeners();
+    Navigator.pop(context);
   }
 
   dynamic addvalues() {

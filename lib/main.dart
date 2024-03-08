@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:ak/controler/counterpage.dart';
 import 'package:ak/core.dart';
 import 'package:ak/view/bottemNavBar.dart';
-import 'package:ak/view/counterpage.dart';
+import 'package:ak/view/counterpage/counterpage.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/secondPage.dart';
 import 'package:ak/view/splashpage.dart';
@@ -49,10 +49,11 @@ class LanguagePick extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 height: double.infinity,
-                child: value.splashimage
+                child: Provider.of<Imageicons>(context,listen: false).splashimage,
+                // value.splashimage
                 // value.image
                 //     Image.asset(
-                //   "image/SplashpageBG-01.png",
+                //   "image/SplashpageBG-01.jpg.png",
                 //   fit: BoxFit.cover,
                 // ),
                 ),

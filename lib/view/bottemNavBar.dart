@@ -2,7 +2,7 @@
 
 import 'package:ak/core.dart';
 import 'package:ak/main.dart';
-import 'package:ak/view/counterpage.dart';
+import 'package:ak/view/counterpage/counterpage.dart';
 import 'package:ak/view/listofdatasthiredpage.dart';
 import 'package:ak/view/readingpageLast.dart';
 import 'package:ak/view/secondPage.dart';

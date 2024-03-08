@@ -1,14 +1,22 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, annotate_overrides
 
 import 'package:flutter/material.dart';
 
 class Imageicons extends ChangeNotifier {
   final splashimage = Image.asset(
-    "image/SplashpageBG-01.png",
+    "image/SplashpageBG-01.jpg",
     fit: BoxFit.cover,
   );
+   dynamic countcounder = "image/counder-01.png";
+   
+  
+  notifyListeners();
   dynamic imagess = Image.asset(
     "image/Splash-01.png",
+    fit: BoxFit.cover,
+  );
+  dynamic countBBgimag = Image.asset(
+    "image/counder-01.png",
     fit: BoxFit.cover,
   );
 
@@ -34,6 +42,8 @@ class Imageicons extends ChangeNotifier {
     "image/KATRE-01-01.png",
   );
 
-final blankBg = Image.asset("image/3 page BG image-01.png",fit: BoxFit.cover,);
-  notifyListeners();
+  final blankBg = Image.asset(
+    "image/3 page BG image-01-01.png",
+    fit: BoxFit.cover,
+  );
 }

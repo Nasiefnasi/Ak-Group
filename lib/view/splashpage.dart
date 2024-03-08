@@ -19,7 +19,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState()  {
     // TODO: implement initState
-     Provider.of<Imageicons>(context,listen: false).imagess;
+     Provider.of<Imageicons>(context,listen: false);
     Timer(
         const Duration(seconds: 4),
         () => Navigator.pushReplacement(context, MaterialPageRoute(

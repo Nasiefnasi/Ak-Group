@@ -1,8 +1,10 @@
 // ignore_for_file: unused_local_variable, duplicate_ignore, avoid_unnecessary_containers
 
 import 'package:ak/core.dart';
+import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/readingpageLast.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DataListpage extends StatelessWidget {
   const DataListpage({super.key});
@@ -46,57 +48,62 @@ class DataListpage extends StatelessWidget {
               width: 25,
             ),
           ]),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
-              child: Image.asset(
-                "image/3 page BG image-01.png",
-                fit: BoxFit.cover,
+      body: Consumer<Imageicons>(builder: (context, value, child) {
+        return
+      
+       SafeArea(
+          child: Stack(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child:value.blankBg
+                // Image.asset(
+                //   "image/3 page BG image-01.png",
+                //   fit: BoxFit.cover,
+                // ), 
               ),
-            ),
-            SizedBox(
-              height: double.infinity,
-              width: double.infinity,
-              child: Column(
-                children: [
-                  // SizedBox(height: 20,),
-                  Container(
-                    height: mediaqurey.height * .1,
-                    width: double.infinity,
-                    color: ligGreen,
-                    child: const Center(
-                      child: Text(
-                        "MUHTELİF SALAVATLAR",
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w500,
-                            color: white),
+              SizedBox(
+                height: double.infinity,
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    // SizedBox(height: 20,),
+                    Container(
+                      height: mediaqurey.height * .1,
+                      width: double.infinity,
+                      color: ligGreen,
+                      child: const Center(
+                        child: Text(
+                          "MUHTELİF SALAVATLAR",
+                          style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.w500,
+                              color: white),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      child: ListView.builder(
-                        itemCount: nameofdata.length,
-                        itemBuilder: (context, index) {
-                          return InkWell( onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                          return  const  ReadPageLast();
-                            },));
-                          },  child: ListofNames(txst: nameofdata[index]));
-                        },
+                    Expanded(
+                      child: Container(
+                        child: ListView.builder(
+                          itemCount: nameofdata.length,
+                          itemBuilder: (context, index) {
+                            return InkWell( onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                            return  const  ReadPageLast();
+                              },));
+                            },  child: ListofNames(txst: nameofdata[index]));
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          ),
+        );
+   } ),
     );
   }
 }
