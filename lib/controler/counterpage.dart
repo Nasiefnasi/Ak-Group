@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 
 class Conutpage extends ChangeNotifier {
   dynamic addvalue;
@@ -7,7 +8,6 @@ class Conutpage extends ChangeNotifier {
   lessvalues() {
     if (data < 99999 && data > 0) {
       data--;
-      print("working???????????????");
     }
 
     notifyListeners();
@@ -21,10 +21,10 @@ class Conutpage extends ChangeNotifier {
 
   dynamic addvalues() {
     // int data=0 ;
-
-    if (data < 999) {
+Vibration.vibrate(duration: 0);
+    if (data < 9999) {
       addvalue = data;
-      data++;
+       data++;
     } else {
       data = 0;
     }

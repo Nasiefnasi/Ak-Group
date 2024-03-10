@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.1.1
   persistent_bottom_nav_bar: ^5.0.2
   lottie: ^2.7.0
+  vibration: ^1.8.4
 
 dev_dependencies:
   flutter_test:

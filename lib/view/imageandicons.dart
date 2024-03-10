@@ -7,7 +7,7 @@ class Imageicons extends ChangeNotifier {
     "image/SplashpageBG-01.jpg",
     fit: BoxFit.cover,
   );
-   dynamic countcounder = "image/counder-01.png";
+   dynamic countcounder = "image/counder-01-01.png";
    
   
   notifyListeners();

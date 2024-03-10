@@ -22,7 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => Conutpage(),),
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Conutpage(),
+        ),
         ChangeNotifierProvider(
           create: (context) => Imageicons(),
         )
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
         home: Splash(),
       ),
     );
-  } 
+  }
 }
 
 class LanguagePick extends StatelessWidget {
@@ -47,16 +50,17 @@ class LanguagePick extends StatelessWidget {
         body: Stack(
           children: [
             SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: Provider.of<Imageicons>(context,listen: false).splashimage,
-                // value.splashimage
-                // value.image
-                //     Image.asset(
-                //   "image/SplashpageBG-01.jpg.png",
-                //   fit: BoxFit.cover,
-                // ),
-                ),
+              width: double.infinity,
+              height: double.infinity,
+              child:
+                  Provider.of<Imageicons>(context, listen: false).splashimage,
+              // value.splashimage
+              // value.image
+              //     Image.asset(
+              //   "image/SplashpageBG-01.jpg.png",
+              //   fit: BoxFit.cover,
+              // ),
+            ),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
@@ -75,10 +79,21 @@ class LanguagePick extends StatelessWidget {
                               width: 120,
                               child: ElevatedButton(
                                   style: ButtonStyle(
+                                      overlayColor: MaterialStateProperty
+                                          .resolveWith<Color?>(
+                                              (Set<MaterialState> states) {
+                                                
+                                        if (states
+                                            .contains(MaterialState.pressed)) {
+                                          return ligGreen;
+                                        }
+                                        return null;
+                                      }),
                                       backgroundColor:
-                                          MaterialStateProperty.all(
-                                              const Color.fromARGB(
-                                                  216, 9, 207, 134)),
+                                          MaterialStateProperty.all(Colors.white
+                                              // const Color.fromARGB(
+                                              //     216, 9, 207, 134)
+                                              ),
                                       shape: MaterialStateProperty.all(
                                           const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.all(

@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, duplicate_ignore, avoid_unnecessary_containers
+// ignore_for_file: unused_local_variable, duplicate_ignore, avoid_unnecessary_containers, non_constant_identifier_names
 
 import 'package:ak/core.dart';
 import 'package:ak/view/imageandicons.dart';
@@ -49,20 +49,18 @@ class DataListpage extends StatelessWidget {
             ),
           ]),
       body: Consumer<Imageicons>(builder: (context, value, child) {
-        return
-      
-       SafeArea(
+        return SafeArea(
           child: Stack(
             children: [
               SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child:value.blankBg
-                // Image.asset(
-                //   "image/3 page BG image-01.png",
-                //   fit: BoxFit.cover,
-                // ), 
-              ),
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: value.blankBg
+                  // Image.asset(
+                  //   "image/3 page BG image-01.png",
+                  //   fit: BoxFit.cover,
+                  // ),
+                  ),
               SizedBox(
                 height: double.infinity,
                 width: double.infinity,
@@ -88,11 +86,18 @@ class DataListpage extends StatelessWidget {
                         child: ListView.builder(
                           itemCount: nameofdata.length,
                           itemBuilder: (context, index) {
-                            return InkWell( onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                            return  const  ReadPageLast();
-                              },));
-                            },  child: ListofNames(txst: nameofdata[index]));
+                            return InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) {
+                                      return const ReadPageLast();
+                                    },
+                                  ));
+                                },
+                                child: ListofNames(
+                                  txst: nameofdata[index],
+                                  Indexs: index,
+                                ));
                           },
                         ),
                       ),
@@ -103,18 +108,20 @@ class DataListpage extends StatelessWidget {
             ],
           ),
         );
-   } ),
+      }),
     );
   }
 }
 
 class ListofNames extends StatefulWidget {
-  const ListofNames({
-    Key? key, // Use Key? key instead of super.key
-    required this.txst,
-  }) : super(key: key);
+  ListofNames(
+      {Key? key, // Use Key? key instead of super.key
+      required this.txst,
+      required this.Indexs})
+      : super(key: key);
 
-  final String txst;
+  final dynamic txst;
+  int Indexs;
 
   @override
   State<ListofNames> createState() => _ListofNamesState();

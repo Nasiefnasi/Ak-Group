@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: unused_local_variable, avoid_unnecessary_containers, sized_box_for_whitespace, sort_child_properties_last
 
 import 'package:ak/controler/counterpage.dart';
 import 'package:ak/core.dart';
@@ -55,162 +55,104 @@ class CounterPage extends StatelessWidget {
                         Provider.of<Imageicons>(context, listen: false).blankBg
                     // value.blankBg,
                     ),
-                Center(
-                  child: Container(
-                    // color: Colors.amber,
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(height: 20),
-                          const Align(
-                            alignment: Alignment.topCenter,
-                            child: Topcirculeicons(),
-                          ),
-                          const Spacer(),
-                          Padding(
-                            padding: EdgeInsets.all(13.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(value.countcounder))),
-                              width: mediqurey.width,
-                              height: mediqurey.height * .6,
-                              child: Column(
-                                children: [
-                                  const SizedBox(height: 100),
-                                  Container(
-                                    height: mediqurey.height * .1,
-                                    width: mediqurey.width * .56,
-                                    decoration: BoxDecoration(
-                                        color: ligGreen,
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: Center(
-                                        child: Text(
-                                      "${count.data}",
-                                      textAlign: TextAlign.left,
-                                      style: const TextStyle(
-                                          letterSpacing: 6.0,
-                                          fontSize: 65,
-                                          fontWeight: FontWeight.w500,
-                                          fontFamily: "digitalfont"),
-                                    )),
-                                  ),
-                                  const SizedBox(height: 20),
-                                  Container(
-                                    height: mediqurey.height * .12,
-                                    // color: Colors.black,
-                                    width: mediqurey.width * .8,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            count.lessvalues();
-                                          },
-                                          child: const CircleAvatar(
-                                            backgroundColor: ligGreen,
-                                            child: Icon(
-                                              Icons.replay,
-                                              size: 60,
-                                              color: darkGreen,
-                                            ),
-                                            radius: 39,
-                                          ),
-                                        ),
-                                        InkWell(
-                                          onTap: () {
-                                            if(count.data>0){
-                                              showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                return AlertDialog(
-                                                  title: const Text(
-                                                      "Confirm reset"),
-                                                  titleTextStyle:
-                                                      const TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          color: Colors.black,
-                                                          fontSize: 20),
-                                                  actionsOverflowButtonSpacing:
-                                                      20,
-                                                  actions: [
-                                                    ElevatedButton(
-                                                        onHover: (value) {},
-                                                        style: const ButtonStyle(
-                                                            backgroundColor:
-                                                                MaterialStatePropertyAll(
-                                                                    darkGreen)),
-                                                        onPressed: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        child: const Text(
-                                                          "Back",
-                                                          style: TextStyle(),
-                                                        )),
-                                                    ElevatedButton(
-                                                        style:
-                                                            const ButtonStyle(
-                                                                backgroundColor:
-                                                                    MaterialStatePropertyAll(
-                                                          darkGreen,
-                                                        )),
-                                                        onPressed: () {
-                                                          count.clearvalues(context);
-                                                        },
-                                                        child:
-                                                            const Text("Rest")),
-                                                  ],
-                                                  content: const Text(
-                                                      "Do you want to reset the selected counter"),
-                                                );
-                                              },
-                                            );
-
-                                            }
-
-
-                                            
-
-                                            // count.clearvalues();
-                                          },
-                                          child: const CircleAvatar(
-                                            backgroundColor: ligGreen,
-                                            child: Icon(Icons.autorenew_rounded,
-                                                size: 60, color: darkGreen),
-                                            radius: 39,
-                                          ),
-                                        )
-                                      ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Container(
+                      // color: Colors.amber,
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 20),
+                            const Align(
+                              alignment: Alignment.topCenter,
+                              child: Topcirculeicons(),
+                            ),
+                            const Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(value.countcounder))),
+                                width: mediqurey.width,
+                                height: mediqurey.height * .6,
+                                child: Column(
+                                  children: [
+                                    const SizedBox(height: 100),
+                                    Container(
+                                      height: mediqurey.height * .1,
+                                      width: mediqurey.width * .56,
+                                      decoration: BoxDecoration(
+                                          color: ligGreen,
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      child: Center(
+                                          child: Text(
+                                        "${count.data}",
+                                        textAlign: TextAlign.left,
+                                        style: const TextStyle(
+                                            letterSpacing: 6.0,
+                                            fontSize: 65,
+                                            fontWeight: FontWeight.w500,
+                                            fontFamily: "digitalfont"),
+                                      )),
                                     ),
-                                  ),
-                                  Center(
-                                    child: InkWell(
-                                      onTap: () {
-                                        count.addvalues();
-                                      },
-                                      child: Container(
-                                        width: mediqurey.width * .4,
-                                        height: mediqurey.height * .2,
-                                        decoration: BoxDecoration(
-                                            color: ligGreen,
-                                            borderRadius:
-                                                BorderRadius.circular(100)),
+                                    const SizedBox(height: 20),
+                                    Container(
+                                      height: mediqurey.height * .12,
+                                      // color: Colors.black,
+                                      width: mediqurey.width * .8,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              count.lessvalues();
+                                            },
+                                            child: const CircleAvatar(
+                                              backgroundColor: ligGreen,
+                                              child: Icon(
+                                                Icons.replay,
+                                                size: 60,
+                                                color: darkGreen,
+                                              ),
+                                              radius: 39,
+                                            ),
+                                          ),
+                                          CounterpageRestbutton(
+                                              porviderdata: count)
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  )
-                                ],
+                                    Center(
+                                      child: InkWell(
+                                        onTap: () {
+                                          count.addvalues();
+                                        },
+                                        child: Container(
+                                          width: mediqurey.width * .35,
+                                          height: mediqurey.height * .17,
+                                          child: const CircleAvatar(
+                                            backgroundColor: ligGreen,
+                                          ),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(100)),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          const Spacer(),
-                        ]),
+                            const Spacer(),
+                          ]),
+                    ),
                   ),
                 )
               ],
@@ -218,6 +160,68 @@ class CounterPage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class CounterpageRestbutton extends StatelessWidget {
+  const CounterpageRestbutton({
+    super.key,
+    required this.porviderdata,
+  });
+  final porviderdata;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (porviderdata.data > 0) {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text("Confirm reset"),
+                titleTextStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 20),
+                actionsOverflowButtonSpacing: 20,
+                actions: [
+                  ElevatedButton(
+                      onHover: (value) {},
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(darkGreen)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Back",
+                        style: TextStyle(),
+                      )),
+                  ElevatedButton(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                        darkGreen,
+                      )),
+                      onPressed: () {
+                        porviderdata.clearvalues(context);
+                      },
+                      child: const Text("Rest")),
+                ],
+                content:
+                    const Text("Do you want to reset the selected counter"),
+              );
+            },
+          );
+        }
+
+        // count.clearvalues();
+      },
+      child: const CircleAvatar(
+        backgroundColor: ligGreen,
+        child: Icon(Icons.autorenew_rounded, size: 60, color: darkGreen),
+        radius: 39,
+      ),
     );
   }
 }
