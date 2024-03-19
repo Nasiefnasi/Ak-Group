@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => Conutpage(),
+          create: (context) => Conutpagecontoller(),
         ),
         ChangeNotifierProvider(
           create: (context) => Imageicons(),
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        home: Counter(),
       ),
     );
   }

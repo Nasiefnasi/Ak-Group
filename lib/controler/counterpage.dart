@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 
-class Conutpage extends ChangeNotifier {
+class Conutpagecontoller extends ChangeNotifier {
   dynamic addvalue;
 // int? valuee;
   int data = 0;
+  bool duration = true;
   lessvalues() {
     if (data < 99999 && data > 0) {
       data--;
@@ -19,12 +20,15 @@ class Conutpage extends ChangeNotifier {
     Navigator.pop(context);
   }
 
-  dynamic addvalues() {
+  dynamic addvalues(bool durat) {
     // int data=0 ;
-Vibration.vibrate(duration: 0);
+    if (duration == durat) {
+      Vibration.vibrate(duration: 10);
+    }
+
     if (data < 9999) {
       addvalue = data;
-       data++;
+      data++;
     } else {
       data = 0;
     }
