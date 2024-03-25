@@ -22,8 +22,11 @@ class _BottomBarState extends State<BottomBar> {
     const LanguagePick(),
     const ReadPageLast(),
     const DataListpage(),
-    const CounterPage(),
-    const DuaPage()
+    Counter(), 
+    // const CounterPage(),
+    const DuaPage(),
+        const DuaPage()
+
   ];
 
   @override

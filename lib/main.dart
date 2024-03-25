@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Counter(),
+        home: Splash(),
       ),
     );
   }
@@ -82,7 +82,6 @@ class LanguagePick extends StatelessWidget {
                                       overlayColor: MaterialStateProperty
                                           .resolveWith<Color?>(
                                               (Set<MaterialState> states) {
-                                                
                                         if (states
                                             .contains(MaterialState.pressed)) {
                                           return ligGreen;

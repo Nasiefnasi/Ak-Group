@@ -69,20 +69,44 @@ class ReadPageLast extends StatelessWidget {
             ),
           )),
           Expanded(
-              child: Container(
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "In the Name of Allah, the All-beneficent, the All- merciful",
-                style: TextStyle(
-                  fontSize: 33,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "arabicf",
-                ),
-              ),
-            ),
-            // color: Colors.black,
-          ))
+              child: ListView.builder(itemCount: arabicfs.length,
+                 itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Container(
+                                child:  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "${ arabicfs[index]}",textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "arabicf",
+                      ),
+                    ),
+                                ),
+                                // color: Colors.black,
+                              ),
+                               Container(color: Colors.amberAccent,
+                                child:  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "${ arabicfs[index]}",textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "arabicf",
+                      ),
+                    ),
+                                ),
+                                // color: Colors.black,
+                              ),
+                  ],
+                );
+                
+              },
+                
+              ))
         ],
       )),
     );
