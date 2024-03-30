@@ -11,15 +11,6 @@ class DataListpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> nameofdata = [
-      "Salat-i Kamiliyye",
-      "Salavat-ul Fatihi",
-      "Salavat-ul Bedeiviyye",
-      "Salat-ul Kemaliyye",
-      "Sifa Salavati",
-      "Salat-ul Amediyye",
-      "Kenzul Azam Salavati"
-    ];
     // ignore: unused_local_variable
     var mediaqurey = MediaQuery.of(context).size;
     return Scaffold(
@@ -84,18 +75,20 @@ class DataListpage extends StatelessWidget {
                     Expanded(
                       child: Container(
                         child: ListView.builder(
-                          itemCount: nameofdata.length,
+                          itemCount: farzname.length,
                           itemBuilder: (context, index) {
                             return InkWell(
                                 onTap: () {
+                                  final arabicdataksey = listofayath.keys.elementAt(index);
+                                  final turkivalu = listofayath[arabicdataksey];
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) {
-                                      return const ReadPageLast();
+                                      return  ReadPageLast(Indes: index,titlename:farzname[index] ,arab: arabicdataksey,);
                                     },
                                   ));
                                 },
                                 child: ListofNames(
-                                  txst: nameofdata[index],
+                                  txst: farzname[index],
                                   Indexs: index,
                                 ));
                           },
@@ -142,8 +135,9 @@ class _ListofNamesState extends State<ListofNames> {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  color: ligGreen,
-                  fontSize: 30,
+                  color: Colors.white,
+                  //  ligGreen,
+                  fontSize: 25,
                   fontWeight: FontWeight.w500,
                 ),
               ),

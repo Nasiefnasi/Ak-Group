@@ -4,8 +4,6 @@ import 'dart:async';
 
 import 'package:ak/controler/counterpage.dart';
 import 'package:ak/core.dart';
-import 'package:ak/view/bottemNavBar.dart';
-import 'package:ak/view/counterpage/counterpage.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/secondPage.dart';
 import 'package:ak/view/splashpage.dart';

@@ -39,6 +39,8 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   lottie: ^2.7.0
   vibration: ^1.8.4
+  number_to_word_arabic: ^0.0.8
+  arabic_numbers: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -90,7 +92,13 @@ flutter:
         - asset: fonts\JerseyM54-aLX9.ttf
     - family: digitalfont
       fonts:
-        - asset: fonts\digital-7.ttf    
+        - asset: fonts\digital-7.ttf   
+    - family: Calibri
+      fonts:
+        - asset: fonts\Calibri.ttf  
+    - family: me_quran
+      fonts:
+        - asset: fonts\me_quran Regular.ttf  
         # - asset: fonts/TrajanPro_Bold.ttf
           # weight: 700
   #

@@ -20,7 +20,8 @@ int _currentIndex = 0;
 class _BottomBarState extends State<BottomBar> {
   final List<Widget> _widgetOptions = <Widget>[
     const LanguagePick(),
-    const ReadPageLast(),
+    // ReadPageLast(),
+    LanguagePick(),
     const DataListpage(),
     Counter(), 
     // const CounterPage(),
