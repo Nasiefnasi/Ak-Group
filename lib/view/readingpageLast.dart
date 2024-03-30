@@ -4,11 +4,15 @@ import 'package:ak/core.dart';
 import 'package:flutter/material.dart';
 
 class ReadPageLast extends StatelessWidget {
-  ReadPageLast({super.key, required this.Indes, required this.titlename, required this .arab, });
+  ReadPageLast({
+    super.key,
+    required this.Indes,
+    required this.titlename,
+    required this.arab,
+  });
   final int Indes;
   final String titlename;
   final List arab;
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +38,10 @@ class ReadPageLast extends StatelessWidget {
             size: 40,
           ),
           actions: [
-            IconButton(onPressed: (){}, icon: const Icon(Icons.table_rows_rounded),),
-           
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.table_rows_rounded),
+            ),
             const SizedBox(
               width: 25,
             ),
@@ -102,7 +108,7 @@ class ReadPageLast extends StatelessWidget {
                   Container(
                     color: const Color.fromARGB(14, 253, 198, 1),
                     child: Padding(
-                      padding:const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         turkishlistvalu![index],
                         textAlign: TextAlign.left,
