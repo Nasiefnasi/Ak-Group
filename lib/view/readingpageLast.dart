@@ -3,7 +3,7 @@
 import 'package:ak/core.dart';
 import 'package:flutter/material.dart';
 
-class ReadPageLast extends StatelessWidget {
+class ReadPageLast extends StatefulWidget {
   ReadPageLast({
     super.key,
     required this.Indes,
@@ -15,7 +15,13 @@ class ReadPageLast extends StatelessWidget {
   final List arab;
 
   @override
+  State<ReadPageLast> createState() => _ReadPageLastState();
+}
+
+class _ReadPageLastState extends State<ReadPageLast> {double _value =20;
+  @override
   Widget build(BuildContext context) {
+    
     var mediaqurey = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -39,8 +45,45 @@ class ReadPageLast extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.table_rows_rounded),
+              onPressed: () {
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Customized'),
+                    // content: const Text('Here we can add the description of the alert'),
+                    content: SizedBox(height: 80,
+                      child: Column(
+                        children: [
+                          Slider(divisions: 100,
+                            min: 0.0,
+                            max: 100.0,
+                            value: _value,
+                            onChanged: (value) {
+                              setState(() {
+                                _value = value;
+                              });
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'Cancel'),
+                        child: const Text('Cancel'),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'OK'),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.table_rows_rounded,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(
               width: 25,
@@ -55,7 +98,7 @@ class ReadPageLast extends StatelessWidget {
             color: ligGreen,
             child: Center(
               child: Text(
-                titlename,
+                widget.titlename,
                 style: const TextStyle(
                     fontSize: 28, fontWeight: FontWeight.w500, color: white),
               ),
@@ -63,10 +106,10 @@ class ReadPageLast extends StatelessWidget {
           ),
           Expanded(
               child: ListView.builder(
-            itemCount: arab.length,
+            itemCount: widget.arab.length,
             itemBuilder: (context, index) {
               // final arabicdataksey = listofayath.keys.elementAt(Indes);
-              final turkishlistvalu = listofayath[arab];
+              final turkishlistvalu = listofayath[widget.arab];
 
               return Column(
                 children: [
@@ -74,7 +117,7 @@ class ReadPageLast extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        arab[index],
+                        widget.arab[index],
                         textAlign: TextAlign.right,
                         style: const TextStyle(
                           fontSize: 45,
