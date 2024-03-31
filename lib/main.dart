@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:ak/controler/counterpage.dart';
+import 'package:ak/controler/slider.dart';
 import 'package:ak/core.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/secondPage.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => Imageicons(),
-        )
+        ),
+        ChangeNotifierProvider(create: (context) => SliderWidget(),)
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
