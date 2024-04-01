@@ -58,8 +58,9 @@ class ReadPageLast extends StatelessWidget {
               ),
             ]),
         body: SafeArea(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
               height: mediaqurey.height * .1,
