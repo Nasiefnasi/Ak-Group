@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-class ReadPageLast extends StatelessWidget {
+class ReadPageLast extends StatefulWidget {
   ReadPageLast({
     super.key,
     required this.Indes,
@@ -22,10 +22,16 @@ class ReadPageLast extends StatelessWidget {
   String imag;
 
   @override
+  State<ReadPageLast> createState() => _ReadPageLastState();
+}
+
+class _ReadPageLastState extends State<ReadPageLast> {
+  bool isture = false;
+
+  @override
   Widget build(BuildContext context) {
-    bool isture = true;
     var mediaqurey = MediaQuery.of(context).size;
-    return Consumer<SliderWidget>(builder: (context, value, child) {
+    return Consumer<SliderWidget>(builder: (context, values, child) {
       return Scaffold(
         appBar: appbarss(context),
         body: SafeArea(
@@ -46,6 +52,18 @@ class ReadPageLast extends StatelessWidget {
             //     ),
             //   ),
             // ),
+            Slider(
+              divisions: 50,
+              min: 28.0,
+              max: 75.0,
+              activeColor: ligGreen.withAlpha(82),
+              thumbColor: Colors.green,
+              inactiveColor: ligGreen.withAlpha(82),
+              value: values.arabivalueUpdate,
+              onChanged: (value) {
+                values.arabicsetValue(value);
+              },
+            ),
             Container(
               width: double.infinity,
               height: 40,
@@ -53,12 +71,19 @@ class ReadPageLast extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text("Turkish"),
+                  Text(
+                    "Turkish",
+                    style: TextStyle(fontSize: 20),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Switch(
                       value: isture,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        setState(() {
+                          isture = value;
+                        });
+                      },
                     ),
                   )
                 ],
@@ -77,17 +102,17 @@ class ReadPageLast extends StatelessWidget {
                     image: DecorationImage(
                         image: AssetImage(
                           Provider.of<ImageReaderPage>(context, listen: false)
-                              .images(Indes),
+                              .images(widget.Indes),
                         ),
                         fit: BoxFit.cover)),
               ),
             ),
             Expanded(
                 child: ListView.builder(
-              itemCount: arab.length,
+              itemCount: widget.arab.length,
               itemBuilder: (context, index) {
                 // final arabicdataksey = listofayath.keys.elementAt(Indes);
-                final turkishlistvalu = listofayath[arab];
+                final turkishlistvalu = listofayath[widget.arab];
 
                 return Column(
                   children: [
@@ -97,12 +122,12 @@ class ReadPageLast extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            arab[index],
+                            widget.arab[index],
                             textAlign: TextAlign.right,
                             textDirection: TextDirection.rtl,
                             style: TextStyle(
                               height: 2,
-                              fontSize: value.arabivalueUpdate,
+                              fontSize: values.arabivalueUpdate,
                               fontWeight: FontWeight.bold,
                               fontFamily: "AmiriQuran",
                             ),
@@ -123,7 +148,7 @@ class ReadPageLast extends StatelessWidget {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                               letterSpacing: .8,
-                              fontSize: value.turkivalueUpdate,
+                              fontSize: values.turkivalueUpdate,
                               fontWeight: FontWeight.bold,
                               fontFamily: "NotoSans",
                             ),
