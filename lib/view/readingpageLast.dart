@@ -67,7 +67,7 @@ class _ReadPageLastState extends State<ReadPageLast> {
             Container(
               width: double.infinity,
               height: 40,
-              // color: Colors.amberAccent,
+              color: Colors.amberAccent,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
