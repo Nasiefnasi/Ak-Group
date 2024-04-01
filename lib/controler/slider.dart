@@ -53,12 +53,18 @@ import 'package:flutter/material.dart';
 // }
 // }
 class SliderWidget extends ChangeNotifier {
-  double _valueUpdate = 25.0;
+  double _arabivalueUpdate = 28.0;
+  double _turkivalueUpdate = 22.0;
 
-  double get valueUpdate => _valueUpdate;
+  double get arabivalueUpdate => _arabivalueUpdate;
+   double get turkivalueUpdate => _turkivalueUpdate;
 
-  void setValue(double value) {
-    _valueUpdate = value;
+  void arabicsetValue(double value) {
+    _arabivalueUpdate = value;
+    notifyListeners();
+  }
+  void turkisetValue(double value) {
+    _turkivalueUpdate = value;
     notifyListeners();
   }
 }

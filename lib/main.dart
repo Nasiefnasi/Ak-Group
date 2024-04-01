@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:ak/controler/counterpage.dart';
+import 'package:ak/controler/reader_page_image.dart';
 import 'package:ak/controler/slider.dart';
 import 'package:ak/core.dart';
 import 'package:ak/view/imageandicons.dart';
@@ -23,12 +24,17 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (context) => ImageReaderPage(),
+        ),
+        ChangeNotifierProvider(
           create: (context) => Conutpagecontoller(),
         ),
         ChangeNotifierProvider(
           create: (context) => Imageicons(),
         ),
-        ChangeNotifierProvider(create: (context) => SliderWidget(),)
+        ChangeNotifierProvider(
+          create: (context) => SliderWidget(),
+        )
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

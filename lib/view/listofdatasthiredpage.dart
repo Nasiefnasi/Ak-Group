@@ -1,9 +1,11 @@
 // ignore_for_file: unused_local_variable, duplicate_ignore, avoid_unnecessary_containers, non_constant_identifier_names
 
+import 'package:ak/controler/reader_page_image.dart';
 import 'package:ak/core.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/readingpageLast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class DataListpage extends StatelessWidget {
@@ -14,32 +16,9 @@ class DataListpage extends StatelessWidget {
     // ignore: unused_local_variable
     var mediaqurey = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-          title: Container(
-            width: mediaqurey.width,
-            height: 40,
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(8)),
-                border: Border.all(width: 3, color: ligGreen)),
-            child: const Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: Text("ARAMAK", style: TextStyle(fontSize: 15)),
-                )),
-          ),
-          backgroundColor: const Color.fromARGB(255, 2, 113, 96),
-          leading: const Icon(
-            Icons.chevron_left_rounded,
-            size: 40,
-          ),
-          actions: const [
-            Icon(Icons.table_rows_rounded),
-            SizedBox(
-              width: 25,
-            ),
-          ]),
-      body: Consumer<Imageicons>(builder: (context, value, child) {
+      appBar: appbarss(context),
+      body: Consumer2<Imageicons, ImageReaderPage>(
+          builder: (context, value, readerimage, child) {
         return SafeArea(
           child: Stack(
             children: [
@@ -67,7 +46,7 @@ class DataListpage extends StatelessWidget {
                           "MUHTELİF SALAVATLAR",
                           style: TextStyle(
                               fontSize: 28,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w900,
                               color: white),
                         ),
                       ),
@@ -78,12 +57,18 @@ class DataListpage extends StatelessWidget {
                           itemCount: farzname.length,
                           itemBuilder: (context, index) {
                             return InkWell(
-                                onTap: () {
-                                  final arabicdataksey = listofayath.keys.elementAt(index);
+                                onTap: () async {
+                                  final arabicdataksey =
+                                      listofayath.keys.elementAt(index);
                                   final turkivalu = listofayath[arabicdataksey];
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) {
-                                      return  ReadPageLast(Indes: index,titlename:farzname[index] ,arab: arabicdataksey,);
+                                      return ReadPageLast(
+                                        Indes: index,
+                                        titlename: farzname[index],
+                                        arab: arabicdataksey,
+                                        imag: readerimage.images(index),
+                                      );
                                     },
                                   ));
                                 },
@@ -126,28 +111,61 @@ class _ListofNamesState extends State<ListofNames> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: ListTile(
-            title: Padding(
-              padding: const EdgeInsets.only(left: 25),
-              child: Text(
-                widget.txst.toString(),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: Colors.white,
-                  //  ligGreen,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card( color: Colors.white,  shadowColor:Colors.black ,elevation: 10,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 20,
                 ),
-              ),
+                SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Image.network(
+                      "https://img.freepik.com/free-psd/quran-book-isolated_23-2151331073.jpg?size=338&ext=jpg&ga=GA1.1.1224184972.1711843200&semt=ais"),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(textAlign: TextAlign.center,
+                      widget.txst.toString(),
+                      maxLines: 3,
+                      overflow: TextOverflow.clip, // Change to TextOverflow.clip
+                      style: const TextStyle(
+                        color: darkGreen,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
-        const Divider(
-          thickness: 4,
-          color: ligGreen,
-        )
+        // Container(
+        //   child: ListTile(
+        //     title: Padding(
+        //       padding: const EdgeInsets.only(left: 25),
+        //       child: Text(
+        //         widget.txst.toString(),
+        //         maxLines: 1,
+        //         overflow: TextOverflow.ellipsis,
+        //         style: const TextStyle(
+        //           color: Colors.white,
+        //           //  ligGreen,
+        //           fontSize: 25,
+        //           fontWeight: FontWeight.w500,
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        // const Divider(
+        //   thickness: 4,
+        //   color: ligGreen,
+        // )
       ],
     );
   }

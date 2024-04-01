@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, non_constant_identifier_names, sort_child_properties_last, file_names
+import 'package:ak/controler/reader_page_image.dart';
 import 'package:ak/core.dart';
 import 'package:ak/view/imageandicons.dart';
 import 'package:ak/view/listofdatasthiredpage.dart';
@@ -19,41 +20,42 @@ class _DuaPageState extends State<DuaPage> {
       Provider.of<Imageicons>(context, listen: false);
     });
     // Provider.of<Imageicons>(context, listen: false);
-    var mediaqurey = MediaQuery.of(context).size;
+    // var mediaqurey = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: mediaqurey.width,
-          height: 40,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-            border: Border.all(width: 3, color: ligGreen),
-          ),
-          child: const Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              child: Text("ARAMAK", style: TextStyle(fontSize: 15)),
-            ),
-          ),
-        ),
-        backgroundColor: const Color.fromARGB(255, 2, 113, 96),
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(
-            Icons.chevron_left_rounded,
-            size: 40,
-          ),
-        ),
-        actions: const [
-          Icon(Icons.table_rows_rounded),
-          SizedBox(
-            width: 25,
-          ),
-        ],
-      ),
+      appBar: appbarss(context),
+      // AppBar(
+      //   title: Container(
+      //     width: mediaqurey.width,
+      //     height: 40,
+      //     decoration: BoxDecoration(
+      //       borderRadius: const BorderRadius.all(Radius.circular(8)),
+      //       border: Border.all(width: 3, color: ligGreen),
+      //     ),
+      //     child: const Align(
+      //       alignment: Alignment.centerLeft,
+      //       child: Padding(
+      //         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      //         child: Text("ARAMAK", style: TextStyle(fontSize: 15)),
+      //       ),
+      //     ),
+      //   ),
+      //   backgroundColor: const Color.fromARGB(255, 2, 113, 96),
+      //   leading: InkWell(
+      //     onTap: () {
+      //       Navigator.pop(context);
+      //     },
+      //     child: const Icon(
+      //       Icons.chevron_left_rounded,
+      //       size: 40,
+      //     ),
+      //   ),
+      //   actions: const [
+      //     Icon(Icons.table_rows_rounded),
+      //     SizedBox(
+      //       width: 25,
+      //     ),
+      //   ],
+      // ),
       backgroundColor: darkGreen,
       body: Consumer<Imageicons>(
         builder: (context, value, child) {

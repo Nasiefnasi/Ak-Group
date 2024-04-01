@@ -99,6 +99,15 @@ flutter:
     - family: me_quran
       fonts:
         - asset: fonts\me_quran Regular.ttf  
+    - family: AmiriQuran
+      fonts:
+        - asset: fonts\AmiriQuran-Regular.ttf 
+    - family: Saleem
+      fonts:
+        - asset: fonts\PDMS_Saleem_QuranFont_shipped.ttf 
+    - family: NotoSans
+      fonts:
+        - asset: fonts\NotoSans_Condensed-SemiBold.ttf
         # - asset: fonts/TrajanPro_Bold.ttf
           # weight: 700
   #
