@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, unnecessary_string_interpolations, non_constant_identifier_names, must_be_immutable
 
+import 'package:ak/controler/counterpage.dart';
 import 'package:ak/controler/reader_page_image.dart';
 import 'package:ak/controler/slider.dart';
 import 'package:ak/core.dart';
@@ -31,13 +32,14 @@ class _ReadPageLastState extends State<ReadPageLast> {
   @override
   Widget build(BuildContext context) {
     var mediaqurey = MediaQuery.of(context).size;
-    return Consumer<SliderWidget>(builder: (context, values, child) {
-      return Scaffold(
+    return Consumer2<SliderWidget, Conutpagecontoller>(
+        builder: (context, values, countvalue, child) {
+      return Scaffold(backgroundColor:Color.fromARGB(255, 218, 247, 226),
         appBar: appbarss(context),
         body: SafeArea(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Container(
             //   height:
@@ -52,45 +54,73 @@ class _ReadPageLastState extends State<ReadPageLast> {
             //     ),
             //   ),
             // ),
-            Slider(
-              divisions: 50,
-              min: 28.0,
-              max: 75.0,
-              activeColor: ligGreen.withAlpha(82),
-              thumbColor: Colors.green,
-              inactiveColor: ligGreen.withAlpha(82),
-              value: values.arabivalueUpdate,
-              onChanged: (value) {
-                values.arabicsetValue(value);
-              },
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  "Font Size",
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.black54),
+                ),
+                Expanded(
+                  child: Slider(
+                    divisions: 50,
+                    min: 28.0,
+                    max: 75.0,
+                    activeColor: ligGreen.withAlpha(82),
+                    thumbColor: Colors.green,
+                    inactiveColor: ligGreen.withAlpha(82),
+                    value: values.arabivalueUpdate,
+                    onChanged: (value) {
+                      values.arabicsetValue(value);
+                    },
+                  ),
+                ),
+              ],
             ),
+
             Container(
               width: double.infinity,
-              height: 40,
-              color: Colors.amberAccent,
+              // height: 50,
+              // color: Colors.amberAccent,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
+                  SizedBox(
+                    width: 20,
+                  ),
+                  const Text(
                     "Turkish",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Switch(
-                      value: isture,
+                    child: Switch(activeColor: darkGreen,activeTrackColor: ligGreen,
+                      value: countvalue.switchupdates,
                       onChanged: (value) {
-                        setState(() {
-                          isture = value;
-                        });
+                        countvalue.switchupdate(value);
                       },
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Text("Save",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.bookmark_added_sharp,
+                        color: darkGreen,
+                      ))
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 10,
                 right: 10,
               ),
@@ -136,27 +166,29 @@ class _ReadPageLastState extends State<ReadPageLast> {
                         // color: Colors.black,
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Container(
-                        width: double.infinity,
-                        color: const Color.fromARGB(14, 253, 198, 1),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            turkishlistvalu![index],
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              letterSpacing: .8,
-                              fontSize: values.turkivalueUpdate,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "NotoSans",
+                    countvalue.switchupdates != false
+                        ? Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                              width: double.infinity,
+                              color: const Color.fromARGB(14, 253, 198, 1),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  turkishlistvalu![index],
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    letterSpacing: .8,
+                                    fontSize: values.turkivalueUpdate,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "NotoSans",
+                                  ),
+                                ),
+                              ),
+                              // color: Colors.black,
                             ),
-                          ),
-                        ),
-                        // color: Colors.black,
-                      ),
-                    ),
+                          )
+                        : SizedBox(),
                     Divider(
                       thickness: 2,
                       color: ligGreen.withOpacity(.2),
@@ -184,7 +216,7 @@ class SliderDialog extends StatelessWidget {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("Arabic size "),
+            const Text("Arabic size "),
             Slider(
               divisions: 50,
               min: 28.0,
@@ -197,7 +229,7 @@ class SliderDialog extends StatelessWidget {
                 sliderWidget.arabicsetValue(value);
               },
             ),
-            Text("Turkish size "),
+            const Text("Turkish size "),
             Slider(
               divisions: 50,
               min: 22.0,

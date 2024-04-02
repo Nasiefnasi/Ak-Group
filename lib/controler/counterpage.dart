@@ -6,6 +6,7 @@ class Conutpagecontoller extends ChangeNotifier {
 // int? valuee;
   int data = 0;
   bool duration = true;
+  bool switchupdates = false;
   lessvalues() {
     if (data < 99999 && data > 0) {
       data--;
@@ -36,5 +37,12 @@ class Conutpagecontoller extends ChangeNotifier {
 
     notifyListeners();
 // return\ addvalue;
+  }
+  switchupdate(bool update){
+   switchupdates = update;
+
+notifyListeners();
+
+
   }
 }
